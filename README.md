@@ -18,6 +18,9 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Docs: https://hexdocs.pm/phoenix
   * Forum: https://elixirforum.com/c/phoenix-forum
   * Source: https://github.com/phoenixframework/phoenix
+  
+## Diagrama de Banco de Dados
+![Modelo_ER](https://github.com/dutraleonardo/delivery_center_test/blob/master/delivery-center-db-diagram.png)
 
 ## O Desafio
 
