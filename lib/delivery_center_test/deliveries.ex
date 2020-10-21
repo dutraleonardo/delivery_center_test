@@ -2,7 +2,7 @@ defmodule DeliveryCenterTest.Deliveries do
   @moduledoc """
   The Deliveries context.
   """
-
+  require IEx
   import Ecto.Query, warn: false
   alias DeliveryCenterTest.Repo
 
@@ -63,11 +63,14 @@ defmodule DeliveryCenterTest.Deliveries do
 
     case HTTPoison.post(base_url, payload, headers) do
       {:ok, %HTTPoison.Response{status_code: status_code, body: body}} ->
-        if body == "OK", do: {:ok, body, status_code}, else: {:err, body, status_code}
-      {:error, %HTTPoison.Error{reason: _reason}} ->
-        {:err, "Internal Server Error", 500}
+        IEx.pry
+        if status_code == 200, do: {
+          :ok, body, status_code},
+        else: {:err, body, status_code}
       {:ok, %HTTPoison.Response{status_code: 404}} ->
         {:err, "Not Found", 404}
+      {:error, %HTTPoison.Error{reason: _reason}} ->
+        {:err, "Internal Server Error", 500}
     end
   end
 
@@ -124,6 +127,7 @@ defmodule DeliveryCenterTest.Deliveries do
       sub_total: request["total_amount"],
       delivery_fee: request["total_shipping"],
       total: request["total_amount_with_shipping"],
+      total_shipping: request["total_shipping"],
       country: receiver_address["country"]["id"],
       state: receiver_address["state"]["name"],
       city: receiver_address["city"]["name"],
@@ -158,9 +162,10 @@ defmodule DeliveryCenterTest.Deliveries do
   end
 
   defp get_payment_info(payment) do
+    IEx.pry
     %Payment{%Payment{} |
       type: String.upcase(payment["payment_type"]),
-      value: payment["transaction_amount"]
+      value: payment["total_paid_amount"]
     }
   end
 

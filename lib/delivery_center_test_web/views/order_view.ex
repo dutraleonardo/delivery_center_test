@@ -16,7 +16,6 @@ defmodule DeliveryCenterTestWeb.OrderView do
       store_id: order.store_id,
       sub_total: order.sub_total,
       delivery_fee: order.delivery_fee,
-      total_shipping: order.total_shipping,
       total: order.total,
       country: order.country,
       state: order.state,
