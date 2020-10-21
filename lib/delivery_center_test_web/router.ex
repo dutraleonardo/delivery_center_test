@@ -19,6 +19,11 @@ defmodule DeliveryCenterTestWeb.Router do
     get "/", PageController, :index
   end
 
+  scope "/api", DeliveryCenterTestWeb do
+    pipe_through :api
+    post "/orders", OrderController, :create
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", DeliveryCenterTestWeb do
   #   pipe_through :api
