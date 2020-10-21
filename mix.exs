@@ -44,7 +44,12 @@ defmodule DeliveryCenterTest.MixProject do
       {:telemetry_poller, "~> 0.4"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:vex, "~> 0.8.0"},
+      {:plug_cowboy, "~> 2.0"},
+      {:poison, "~> 3.1"},
+      {:httpoison, "~> 1.7"},
+      {:calendar, "~> 1.0"},
+      {:decimal, "~> 2.0"},
     ]
   end
 

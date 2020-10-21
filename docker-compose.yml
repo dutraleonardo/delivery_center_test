@@ -1,0 +1,40 @@
+version: '3.1'
+
+services:
+
+  database:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DATABASE_DB}
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+  web:
+    network_mode: "host"
+    build: .
+    restart: always
+    ports:
+      - 4000:4000
+    environment:
+      MIX_ENV: dev
+      APP_PORT: 4000
+      DATABASE_URL: ${DATABASE_URL}
+      DB_HOST: ${DB_HOST}
+      DATABASE_DB: ${DATABASE_DB}
+      DB_PORT: ${DB_PORT}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+
+    depends_on:
+      - database
+  test:
+    build: .
+    command: mix test
+    environment:
+      - MIX_ENV=test
+    links:
+      - database
