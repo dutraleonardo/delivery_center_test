@@ -18,6 +18,131 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Docs: https://hexdocs.pm/phoenix
   * Forum: https://elixirforum.com/c/phoenix-forum
   * Source: https://github.com/phoenixframework/phoenix
+
+## Como rodar o projeto?
+
+#### Clone o repositório
+```
+git clone https://github.com/dutraleonardo/delivery_center_test.git
+cd delivery_center_test
+```
+
+#### Rodar com docker
+```
+  chmod +x entrypoint.sh
+  docker-compose build
+  docker-compose up
+```
+
+#### Rodar sem docker
+* Ver o inicio da documentaçao
+
+#### Testar
+* Postman -> importar o arquivo e executar a requisição delivery_center_test.postman_collection.json
+* cURL -> executar o código abaixo no terminal
+  ```
+  curl -X POST \
+  http://localhost:4000/api/orders \
+  -H 'Accept: */*' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'Content-Type: application/json' \
+  -H 'Host: localhost:4000' \
+  -H 'Postman-Token: 3efe29da-ea8e-4341-9b13-9bff74fc1574,e2291ef5-f7dc-42b7-a139-1b8fa23130b6' \
+  -H 'User-Agent: PostmanRuntime/7.15.0' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'cache-control: no-cache' \
+  -H 'content-length: 2087' \
+  -H 'cookie: connect.sid=s%3Aa0234e00-7554-4474-9ef1-bacca6207fcf.upTzy1Ydgm67GYlo1%2Bam%2Bd2Cchv5kYA6dNbIFkwPeFE; messages="33b59aac3d80cada142c97eecc3bf1533d314837$[[\"__json_message\"\0540\05420\054\"Confirmation e-mail sent to contatoe@eletronicaproletario.com.\"]\054[\"__json_message\"\0540\05425\054\"Successfully signed in as contatoe@eletronicaproletario.com.\"]]"; csrftoken=nmLTZpLc9UzidZThz4D8c2w8rWtOWZZ2vs5gWHNLcjLjhkh0tSdk1tx6fSzBjYeH' \
+  -b 'connect.sid=s%3Aa0234e00-7554-4474-9ef1-bacca6207fcf.upTzy1Ydgm67GYlo1%2Bam%2Bd2Cchv5kYA6dNbIFkwPeFE; messages="33b59aac3d80cada142c97eecc3bf1533d314837$[[\"__json_message\"\0540\05420\054\"Confirmation e-mail sent to contatoe@eletronicaproletario.com.\"]\054[\"__json_message\"\0540\05425\054\"Successfully signed in as contatoe@eletronicaproletario.com.\"]]"; csrftoken=nmLTZpLc9UzidZThz4D8c2w8rWtOWZZ2vs5gWHNLcjLjhkh0tSdk1tx6fSzBjYeH' \
+  -d '{
+  "id": 9987071,
+  "store_id": 282,
+  "date_created": "2019-06-24T16:45:32.000-04:00",
+  "date_closed": "2019-06-24T16:45:35.000-04:00",
+  "last_updated": "2019-06-25T13:26:49.000-04:00",
+  "total_amount": 49.9,
+  "total_shipping": 5.14,
+  "total_amount_with_shipping": 55.04,
+  "paid_amount": 55.04,
+  "expiration_date": "2019-07-22T16:45:35.000-04:00",
+  "order_items": [
+    {
+      "item": {
+        "id": "IT4801901403",
+        "title": "Produto de Testes"
+      },
+      "quantity": 1,
+      "unit_price": 49.9,
+      "full_unit_price": 49.9
+    }
+  ],
+  "payments": [
+    {
+      "id": 12312313,
+      "order_id": 9987071,
+      "payer_id": 414138,
+      "installments": 1,
+      "payment_type": "credit_card",
+      "status": "paid",
+      "transaction_amount": 49.9,
+      "taxes_amount": 0,
+      "shipping_cost": 5.14,
+      "total_paid_amount": 55.04,
+      "installment_amount": 55.04,
+      "date_approved": "2019-06-24T16:45:35.000-04:00",
+      "date_created": "2019-06-24T16:45:33.000-04:00"
+    }
+  ],
+  "shipping": {
+    "id": 43444211797,
+    "shipment_type": "shipping",
+    "date_created": "2019-06-24T16:45:33.000-04:00",
+    "receiver_address": {
+      "id": 1051695306,
+      "address_line": "Rua Fake de Testes 3454",
+      "street_name": "Rua Fake de Testes",
+      "street_number": "3454",
+      "comment": "teste",
+      "zip_code": "85045020",
+      "city": {
+        "name": "Cidade de Testes"
+      },
+      "state": {
+        "name": "São Paulo"
+      },
+      "country": {
+        "id": "BR",
+        "name": "Brasil"
+      },
+      "neighborhood": {
+        "id": null,
+        "name": "Vila de Testes"
+      },
+      "latitude": -23.629037,
+      "longitude": -46.712689,
+      "receiver_phone": "41999999999"
+    }
+  },
+  "status": "paid",
+  "buyer": {
+    "id": 136226073,
+    "nickname": "JOHN DOE",
+    "email": "john@doe.com",
+    "phone": {
+      "area_code": 41,
+      "number": "999999999"
+    },
+    "first_name": "John",
+    "last_name": "Doe",
+    "billing_info": {
+      "doc_type": "CPF",
+      "doc_number": "09487965477"
+    }
+  }
+}'
+  ```
+
   
 ## Diagrama de Banco de Dados
 ![Modelo_ER](https://github.com/dutraleonardo/delivery_center_test/blob/master/delivery-center-db-diagram.png)

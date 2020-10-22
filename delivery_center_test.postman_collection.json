@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "853d8c0a-d60d-46f8-8599-87ee738c7804",
+		"name": "delivery_center_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST_ORDERS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 9987071,\n  \"store_id\": 282,\n  \"date_created\": \"2019-06-24T16:45:32.000-04:00\",\n  \"date_closed\": \"2019-06-24T16:45:35.000-04:00\",\n  \"last_updated\": \"2019-06-25T13:26:49.000-04:00\",\n  \"total_amount\": 49.9,\n  \"total_shipping\": 5.14,\n  \"total_amount_with_shipping\": 55.04,\n  \"paid_amount\": 55.04,\n  \"expiration_date\": \"2019-07-22T16:45:35.000-04:00\",\n  \"order_items\": [\n    {\n      \"item\": {\n        \"id\": \"IT4801901403\",\n        \"title\": \"Produto de Testes\"\n      },\n      \"quantity\": 1,\n      \"unit_price\": 49.9,\n      \"full_unit_price\": 49.9\n    }\n  ],\n  \"payments\": [\n    {\n      \"id\": 12312313,\n      \"order_id\": 9987071,\n      \"payer_id\": 414138,\n      \"installments\": 1,\n      \"payment_type\": \"credit_card\",\n      \"status\": \"paid\",\n      \"transaction_amount\": 49.9,\n      \"taxes_amount\": 0,\n      \"shipping_cost\": 5.14,\n      \"total_paid_amount\": 55.04,\n      \"installment_amount\": 55.04,\n      \"date_approved\": \"2019-06-24T16:45:35.000-04:00\",\n      \"date_created\": \"2019-06-24T16:45:33.000-04:00\"\n    }\n  ],\n  \"shipping\": {\n    \"id\": 43444211797,\n    \"shipment_type\": \"shipping\",\n    \"date_created\": \"2019-06-24T16:45:33.000-04:00\",\n    \"receiver_address\": {\n      \"id\": 1051695306,\n      \"address_line\": \"Rua Fake de Testes 3454\",\n      \"street_name\": \"Rua Fake de Testes\",\n      \"street_number\": \"3454\",\n      \"comment\": \"teste\",\n      \"zip_code\": \"85045020\",\n      \"city\": {\n        \"name\": \"Cidade de Testes\"\n      },\n      \"state\": {\n        \"name\": \"São Paulo\"\n      },\n      \"country\": {\n        \"id\": \"BR\",\n        \"name\": \"Brasil\"\n      },\n      \"neighborhood\": {\n        \"id\": null,\n        \"name\": \"Vila de Testes\"\n      },\n      \"latitude\": -23.629037,\n      \"longitude\": -46.712689,\n      \"receiver_phone\": \"41999999999\"\n    }\n  },\n  \"status\": \"paid\",\n  \"buyer\": {\n    \"id\": 136226073,\n    \"nickname\": \"JOHN DOE\",\n    \"email\": \"john@doe.com\",\n    \"phone\": {\n      \"area_code\": 41,\n      \"number\": \"999999999\"\n    },\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\",\n    \"billing_info\": {\n      \"doc_type\": \"CPF\",\n      \"doc_number\": \"09487965477\"\n    }\n  }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
