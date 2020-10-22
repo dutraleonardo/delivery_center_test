@@ -70,7 +70,7 @@ defmodule DeliveryCenterTest.Deliveries do
       {:ok, %HTTPoison.Response{status_code: 404}} ->
         {:err, "Not Found", 404}
       {:error, %HTTPoison.Error{reason: _reason}} ->
-        {:err, "Internal Server Error", 500}
+        {:err, "Service Unavailable", 503}
     end
   end
 
