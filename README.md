@@ -40,21 +40,12 @@ cd delivery_center_test
 #### Testar
 * Postman -> importar o arquivo e executar a requisição delivery_center_test.postman_collection.json
 * cURL -> executar o código abaixo no terminal
-  ```
-  curl -X POST \
+ ```
+ curl -X POST \
   http://localhost:4000/api/orders \
-  -H 'Accept: */*' \
-  -H 'Cache-Control: no-cache' \
-  -H 'Connection: keep-alive' \
   -H 'Content-Type: application/json' \
-  -H 'Host: localhost:4000' \
-  -H 'Postman-Token: 3efe29da-ea8e-4341-9b13-9bff74fc1574,e2291ef5-f7dc-42b7-a139-1b8fa23130b6' \
-  -H 'User-Agent: PostmanRuntime/7.15.0' \
-  -H 'accept-encoding: gzip, deflate' \
+  -H 'Postman-Token: daabe393-7eec-48b0-b007-57e6eb3fb2d9' \
   -H 'cache-control: no-cache' \
-  -H 'content-length: 2087' \
-  -H 'cookie: connect.sid=s%3Aa0234e00-7554-4474-9ef1-bacca6207fcf.upTzy1Ydgm67GYlo1%2Bam%2Bd2Cchv5kYA6dNbIFkwPeFE; messages="33b59aac3d80cada142c97eecc3bf1533d314837$[[\"__json_message\"\0540\05420\054\"Confirmation e-mail sent to contatoe@eletronicaproletario.com.\"]\054[\"__json_message\"\0540\05425\054\"Successfully signed in as contatoe@eletronicaproletario.com.\"]]"; csrftoken=nmLTZpLc9UzidZThz4D8c2w8rWtOWZZ2vs5gWHNLcjLjhkh0tSdk1tx6fSzBjYeH' \
-  -b 'connect.sid=s%3Aa0234e00-7554-4474-9ef1-bacca6207fcf.upTzy1Ydgm67GYlo1%2Bam%2Bd2Cchv5kYA6dNbIFkwPeFE; messages="33b59aac3d80cada142c97eecc3bf1533d314837$[[\"__json_message\"\0540\05420\054\"Confirmation e-mail sent to contatoe@eletronicaproletario.com.\"]\054[\"__json_message\"\0540\05425\054\"Successfully signed in as contatoe@eletronicaproletario.com.\"]]"; csrftoken=nmLTZpLc9UzidZThz4D8c2w8rWtOWZZ2vs5gWHNLcjLjhkh0tSdk1tx6fSzBjYeH' \
   -d '{
   "id": 9987071,
   "store_id": 282,
@@ -141,7 +132,7 @@ cd delivery_center_test
     }
   }
 }'
-  ```
+ ```
 
   
 ## Diagrama de Banco de Dados
